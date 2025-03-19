@@ -31,7 +31,6 @@ const moveEvent = (event) => {
 }
 
 document.addEventListener("mousemove", moveEvent);
-document.addEventListener("touchmove", moveEvent);
 
 TweenMax.to({}, 0.01, {
   repeat: -1,
