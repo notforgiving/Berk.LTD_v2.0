@@ -1,13 +1,6 @@
 const pages = document.querySelector(".pages");
 const pointsOfPages = pages.querySelectorAll("span");
 
-const startvideos = () => {
-  const videos = document.querySelectorAll("video");
-  videos.forEach((item) => {
-    item.play();
-  });
-};
-
 const body = document.querySelector("body");
 const SPEEDANIMATIONS = 1000;
 
@@ -32,7 +25,7 @@ window.addEventListener('load', (event) => {
   setTimeout(() => {
     body.classList.remove("welcome");
     body.classList.add("bg");
-    startvideos();
+    document.querySelector("video").play();
   }, SPEEDANIMATIONS * 2);
 
   setTimeout(() => {
