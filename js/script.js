@@ -15,7 +15,7 @@ setTimeout(() => {
   body.classList.add("welcome");
 }, SPEEDANIMATIONS);
 
-window.onload = () => {
+window.addEventListener('load', (event) => {
   $("#fullpage").fullpage({
     css3: false,
     responsiveWidth: 1250,
@@ -43,4 +43,4 @@ window.onload = () => {
   setTimeout(() => {
     $.fn.fullpage.setAllowScrolling(true);
   }, SPEEDANIMATIONS * 5.5);
-};
+});
