@@ -126,7 +126,6 @@ section {
   margin: 0 auto;
   padding: 0 10px;
   height: 100%;
-  position: relative;
 }
 @media screen and (max-width: 1250px) {
   .container {
