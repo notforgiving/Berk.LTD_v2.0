@@ -9,7 +9,6 @@ const startvideos = () => {
 };
 
 const body = document.querySelector("body");
-$.fn.fullpage.setAllowScrolling(false);
 const SPEEDANIMATIONS = 1500;
 
 setTimeout(() => {
@@ -28,6 +27,7 @@ window.onload = () => {
       pointsOfPages[nextIndex - 1].classList.add("active");
     },
   });
+  $.fn.fullpage.setAllowScrolling(false);
   setTimeout(() => {
     body.classList.remove("welcome");
     body.classList.add("bg");
