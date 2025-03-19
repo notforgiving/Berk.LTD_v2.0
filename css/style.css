@@ -92,6 +92,14 @@ body.bg .main_bg {
   transition: opacity 1s;
   opacity: 1;
 }
+@media screen and (max-width: 600px) {
+  body.bg .vignette {
+    transition: all 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0s;
+    background-image: radial-gradient(circle closest-corner at center 195px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
+    opacity: 1;
+  }
+}
 body.overlay .vignette {
   transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-delay: 0.5s;
@@ -100,7 +108,10 @@ body.overlay .vignette {
 }
 @media screen and (max-width: 600px) {
   body.overlay .vignette {
+    transition: all 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0s;
     background-image: radial-gradient(circle closest-corner at center 195px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
+    opacity: 1;
   }
 }
 body.title .main_content {
@@ -868,25 +879,23 @@ section {
      -moz-user-select: none;
           user-select: none;
   position: absolute;
-  left: 53%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100vw;
-}
-@media screen and (max-width: 600px) {
-  .main_title {
-    height: 449px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    transform: translate(-50%, 0);
-  }
+  width: 100%;
 }
 @media screen and (max-width: 1250px) {
   .main_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: static;
     font-size: 28px;
+    height: auto;
+    transform: none;
+    letter-spacing: 0.6em;
   }
 }
 @media screen and (max-width: 750px) {
@@ -896,7 +905,7 @@ section {
 }
 @media screen and (max-width: 600px) {
   .main_title {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 
