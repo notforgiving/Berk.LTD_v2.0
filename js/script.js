@@ -18,8 +18,7 @@ window.addEventListener("load", (event) => {
     $("#fullpage").fullpage({
       css3: true,
       responsiveWidth: 1250,
-      fixedElements: '#header',
-      // normalScrollElements: '#header',
+      fixedElements: document.body.clientWidth <= 1250 ? "#header" : "",
       afterLoad: function (anchorLink, index) {
         pointsOfPages[index - 1].classList.add("active");
       },
