@@ -8,7 +8,7 @@ setTimeout(() => {
   body.classList.add("welcome");
 }, SPEEDANIMATIONS);
 
-window.addEventListener('load', (event) => {
+document.addEventListener('load', (event) => {
   $("#fullpage").fullpage({
     css3: false,
     responsiveWidth: 1250,
