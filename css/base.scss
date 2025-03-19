@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Bruno Ace SC", sans-serif;
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin iphone {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+$containerWidth: 1200px;
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+  background: repeating-radial-gradient(
+    circle farthest-corner at center center,
+    rgba(170, 185, 197, 1) 0%,
+    rgba(28, 169, 206, 1) 14%,
+    rgba(95, 130, 200, 1) 31%,
+    rgba(77, 77, 168, 1) 54%,
+    rgba(31, 33, 71, 1) 80%,
+    rgba(30, 36, 71, 1) 100%
+  );
+  border-radius: 4px;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #0299ff;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+svg {
+  vertical-align: middle;
+  flex: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: normal;
+  color: #fff;
+  background: #111319;
+
+  &.welcome {
+    .main_welcome {
+      transition: opacity 1s;
+      opacity: 1;
+    }
+  }
+
+  &.bg {
+    .main_bg {
+      transition: opacity 1s;
+      opacity: 1;
+    }
+  }
+
+  &.overlay {
+    .vignette {
+      opacity: 1;
+    }
+  }
+
+  &.title {
+    .main_content {
+      transition: opacity 1s;
+      opacity: 1;
+      transition-delay: 0.8s;
+    }
+
+    .header,
+    .advantages,
+    .pages {
+      transition: all 1s;
+      opacity: 1;
+      transition-delay: 1.8s;
+      transform: translateY(0%);
+    }
+  }
+}
+
+section {
+  height: 100vh;
+}

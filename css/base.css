@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Bruno Ace SC", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: repeating-radial-gradient(circle farthest-corner at center center, rgb(170, 185, 197) 0%, rgb(28, 169, 206) 14%, rgb(95, 130, 200) 31%, rgb(77, 77, 168) 54%, rgb(31, 33, 71) 80%, rgb(30, 36, 71) 100%);
+  border-radius: 4px;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #0299ff;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+}
+
+svg {
+  vertical-align: middle;
+  flex: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: normal;
+  color: #fff;
+  background: #111319;
+}
+body.welcome .main_welcome {
+  transition: opacity 1s;
+  opacity: 1;
+}
+body.bg .main_bg {
+  transition: opacity 1s;
+  opacity: 1;
+}
+body.overlay .vignette {
+  opacity: 1;
+}
+body.title .main_content {
+  transition: opacity 1s;
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+body.title .header,
+body.title .advantages,
+body.title .pages {
+  transition: all 1s;
+  opacity: 1;
+  transition-delay: 1.8s;
+  transform: translateY(0%);
+}
+
+section {
+  height: 100vh;
+}/*# sourceMappingURL=base.css.map */
