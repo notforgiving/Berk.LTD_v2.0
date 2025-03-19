@@ -1,3 +1,5 @@
+@import 'base';
+
 .vignette {
   position: absolute;
   left: 0;
@@ -254,4 +256,12 @@
       max-width: 286px;
     }
   }
+}
+
+#size {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  color: #fff;
+  z-index: 50000;
 }

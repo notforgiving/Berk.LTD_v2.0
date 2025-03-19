@@ -1,6 +1,10 @@
 const pages = document.querySelector(".pages");
 const pointsOfPages = pages.querySelectorAll("span");
 
+document.querySelector(
+  "#size"
+).innerHTML = `${document.body.clientWidth}x${window.innerHeight}`;
+
 const body = document.querySelector("body");
 const SPEEDANIMATIONS = 1000;
 
@@ -8,7 +12,7 @@ setTimeout(() => {
   body.classList.add("welcome");
 }, SPEEDANIMATIONS);
 
-window.addEventListener('load', (event) => {
+window.addEventListener("load", (event) => {
   $("#fullpage").fullpage({
     css3: false,
     responsiveWidth: 1250,
@@ -21,7 +25,7 @@ window.addEventListener('load', (event) => {
     },
   });
   $.fn.fullpage.setAllowScrolling(false);
-  
+
   setTimeout(() => {
     body.classList.remove("welcome");
     body.classList.add("bg");
