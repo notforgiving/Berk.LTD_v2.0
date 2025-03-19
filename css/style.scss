@@ -150,6 +150,10 @@ body {
   }
 }
 
+section {
+  height: 100vh;
+}
+
 .container {
   max-width: $containerWidth;
   margin: 0 auto;
