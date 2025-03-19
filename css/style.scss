@@ -145,18 +145,20 @@ body {
   }
 
   &.overlay {
-    .vignette {
-      transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transition-delay: 0.5s;
-      background: radial-gradient(
-        ellipse closest-corner at 50% 50%,
-        rgba(0, 0, 0, 0) 36.3%,
-        #08090c 71.7%
-      );
-      opacity: 1;
+    .main {
+      .vignette {
+        transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-delay: 0.5s;
+        background: radial-gradient(
+          ellipse closest-corner at 50% 50%,
+          rgba(0, 0, 0, 0) 36.3%,
+          #08090c 71.7%
+        );
+        opacity: 1;
 
-      @include phone {
-        @include vignettePhone;
+        @include phone {
+          @include vignettePhone;
+        }
       }
     }
   }
@@ -460,6 +462,87 @@ section {
       color: #fff;
       max-width: 286px;
     }
+  }
+}
+
+.map {
+  background: url(../img/map.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  // .map_container
+  &_container {
+  }
+  // .map_content
+  &_content {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  // .map_title
+  &_title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  // .map_info
+  &_info {
+    display: flex;
+    gap: 100px;
+
+    @include phone {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  // .map_copy
+  &_copy {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    padding: 30px 0;
+    span {
+      color: #fff;
+    }
+  }
+
+  // .map_item
+  &_item {
+  }
+  // .map_item-title
+  &_item-title {
+    color: #716bce;
+    padding-left: 40px;
+    margin-bottom: 20px;
+  }
+  // .map_item-data
+  &_item-data {
+    display: flex;
+    gap: 20px;
+
+    span {
+      max-width: 256px;
+    }
+  }
+
+  .vignette {
+    background: radial-gradient(
+      54.87% 50% at 50% 50%,
+      rgba(12, 13, 17, 0) 0%,
+      #08090c 100%
+    );
+    opacity: 1;
   }
 }
 

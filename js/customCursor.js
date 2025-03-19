@@ -32,7 +32,7 @@ const moveEvent = (event) => {
 
 document.addEventListener("mousemove", moveEvent);
 
-TweenMax.to({}, 0.01, {
+TweenMax.to({}, 0.016, {
   repeat: -1,
   onRepeat: function () {
     cursorFollowers.forEach((item, index) => {
