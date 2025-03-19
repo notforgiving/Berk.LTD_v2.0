@@ -8,19 +8,6 @@ const startvideos = () => {
   });
 };
 
-$("#fullpage").fullpage({
-  css3: false,
-  responsiveWidth: 1250,
-  afterLoad: function (anchorLink, index) {
-    pointsOfPages[index - 1].classList.add("active");
-  },
-  onLeave: function (index, nextIndex, direction) {
-    pointsOfPages[index - 1].classList.remove("active");
-    pointsOfPages[nextIndex - 1].classList.add("active");
-  },
-});
-
-// welcome
 const body = document.querySelector("body");
 $.fn.fullpage.setAllowScrolling(false);
 const SPEEDANIMATIONS = 1500;
@@ -30,6 +17,17 @@ setTimeout(() => {
 }, SPEEDANIMATIONS);
 
 window.onload = () => {
+  $("#fullpage").fullpage({
+    css3: false,
+    responsiveWidth: 1250,
+    afterLoad: function (anchorLink, index) {
+      pointsOfPages[index - 1].classList.add("active");
+    },
+    onLeave: function (index, nextIndex, direction) {
+      pointsOfPages[index - 1].classList.remove("active");
+      pointsOfPages[nextIndex - 1].classList.add("active");
+    },
+  });
   setTimeout(() => {
     body.classList.remove("welcome");
     body.classList.add("bg");
