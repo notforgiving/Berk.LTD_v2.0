@@ -23,7 +23,7 @@ $("#fullpage").fullpage({
 // welcome
 const body = document.querySelector("body");
 $.fn.fullpage.setAllowScrolling(false);
-const SPEEDANIMATIONS = 1;
+const SPEEDANIMATIONS = 1500;
 setTimeout(() => {
   body.classList.add("welcome");
 }, SPEEDANIMATIONS);
