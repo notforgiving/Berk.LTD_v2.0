@@ -138,9 +138,10 @@ body {
       );
       opacity: 1;
       @include phone {
+        transition: 0s;
+        transition-delay: 0s;
         background-image: radial-gradient(circle closest-corner at center 195px, rgba(0,0,0,0) 0%, rgba(8,9,12,1) 100%);
       }
-
     }
   }
 
