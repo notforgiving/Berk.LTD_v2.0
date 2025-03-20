@@ -9,7 +9,7 @@ document.querySelector(
 ).innerHTML = `${document.body.clientWidth}x${window.innerHeight}`;
 
 const body = document.querySelector("body");
-const SPEEDANIMATIONS = 500;
+const SPEEDANIMATIONS = 1500;
 
 setTimeout(() => {
   body.classList.add("welcome");
