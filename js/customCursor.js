@@ -1,5 +1,6 @@
 const cursor = document.querySelector("#cursor");
 const cursorFollowers = cursor.querySelectorAll("span");
+const bdb_items = document.querySelectorAll(".bdb_item");
 
 let mouseX = 0;
 let mouseY = 0;
@@ -13,8 +14,38 @@ setInterval(() => {
   mouseMove = false;
 }, 30);
 
+const checkPosition = (
+  clientX,
+  clientWidth,
+  clientY,
+  clientHeight,
+  mouseX,
+  mouseY
+) => {
+  const finishX = clientX + clientWidth;
+  const finishY = clientY + clientHeight;
+  if (
+    mouseX >= clientX &&
+    mouseX <= finishX &&
+    mouseY >= clientY &&
+    mouseY <= finishY
+  ) {
+    return true;
+  }
+
+  return false;
+};
+
+const setActiveItem = (target, classname, set) => {
+  if (set) {
+    target.classList.add(classname);
+  } else {
+    target.classList.remove(classname);
+  }
+};
+
 const moveEvent = (event) => {
-  cursor.style.opacity = '1';
+  cursor.style.opacity = "1";
   mouseX = event.clientX;
   mouseY = event.clientY;
 
@@ -28,7 +59,23 @@ const moveEvent = (event) => {
   }
 
   mouseMove = true;
-}
+  if (!!bdb_items.length) {
+    bdb_items.forEach((item) => {
+      setActiveItem(
+        item,
+        "active",
+        checkPosition(
+          item.getBoundingClientRect().x,
+          item.clientWidth,
+          item.getBoundingClientRect().y,
+          item.clientHeight,
+          mouseX,
+          mouseY
+        )
+      );
+    });
+  }
+};
 
 document.addEventListener("mousemove", moveEvent);
 

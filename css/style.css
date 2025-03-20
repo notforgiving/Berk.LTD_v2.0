@@ -93,7 +93,7 @@ body.bg .main_bg {
   opacity: 1;
 }
 @media screen and (max-width: 600px) {
-  body.bg .vignette {
+  body.bg .main .vignette {
     transition: all 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-delay: 0s;
     background-image: radial-gradient(circle closest-corner at center 195px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
@@ -1046,8 +1046,96 @@ section {
   max-width: 256px;
 }
 .map .vignette {
+  transition: none;
   background: radial-gradient(54.87% 50% at 50% 50%, rgba(12, 13, 17, 0) 0%, #08090c 100%);
+  background-position: center;
   opacity: 1;
+}
+@media screen and (max-width: 600px) {
+  .map .vignette {
+    transition: none;
+    background: radial-gradient(54.87% 50% at 50% 50%, rgba(12, 13, 17, 0) 0%, #08090c 100%);
+    background-position: center;
+  }
+}
+
+.bdb {
+  height: 100%;
+}
+.bdb_title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 671px;
+  margin: 0 auto;
+}
+.bdb_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+.bdb_content {
+  position: relative;
+  z-index: 4;
+  top: 50%;
+}
+.bdb_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+@media screen and (max-width: 970px) {
+  .bdb_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.bdb_item {
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 350px;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background: rgba(139, 131, 255, 0.2);
+  transition: 0.3s;
+}
+@media screen and (max-width: 970px) {
+  .bdb_item {
+    max-width: 584px;
+  }
+}
+.bdb_item.active {
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0 0 120px 0 #7a1a68;
+  background: rgba(139, 131, 255, 0.6);
+}
+.bdb_item strong {
+  display: block;
+  font-weight: 400;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.bdb_item span {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
 }
 
 #size {

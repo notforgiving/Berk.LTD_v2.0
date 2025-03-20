@@ -2,13 +2,14 @@ const pages = document.querySelector(".pages");
 const pointsOfPages = pages.querySelectorAll("span");
 const videoBg = document.querySelector("video");
 const main_title = document.querySelector(".main_title");
+const videos = document.querySelectorAll("video");
 
 document.querySelector(
   "#size"
 ).innerHTML = `${document.body.clientWidth}x${window.innerHeight}`;
 
 const body = document.querySelector("body");
-const SPEEDANIMATIONS = 1;
+const SPEEDANIMATIONS = 500;
 
 setTimeout(() => {
   body.classList.add("welcome");
@@ -17,7 +18,7 @@ setTimeout(() => {
 const mobileCondition = document.body.clientWidth <= 1250;
 
 window.addEventListener("load", (event) => {
-  if (videoBg) {
+  if (videos[0]) {
     $("#fullpage").fullpage({
       css3: true,
       responsiveWidth: 1250,
@@ -35,7 +36,11 @@ window.addEventListener("load", (event) => {
     setTimeout(() => {
       body.classList.remove("welcome");
       body.classList.add("bg");
-      document.querySelector("video").play();
+      videos.forEach((item) => {
+        if (item) {
+          item.play();
+        }
+      });
     }, SPEEDANIMATIONS * 2);
 
     setTimeout(() => {
@@ -45,11 +50,9 @@ window.addEventListener("load", (event) => {
 
     setTimeout(() => {
       $.fn.fullpage.setAllowScrolling(true);
-    }, SPEEDANIMATIONS * 5.5);
+    }, SPEEDANIMATIONS * 5);
 
     if (mobileCondition) {
-      console.log(mobileCondition,'mobileCondition');
-      
       videoBg.style.height = `${main_title.clientHeight}px`;
     }
   }
