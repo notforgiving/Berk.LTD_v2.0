@@ -19,20 +19,6 @@ const mobileCondition = document.body.clientWidth <= 1250;
 
 window.addEventListener("load", (event) => {
   if (videos[0]) {
-    $("#fullpage").fullpage({
-      css3: true,
-      responsiveWidth: 1250,
-      fixedElements: mobileCondition ? "#header" : "",
-      afterLoad: function (anchorLink, index) {
-        pointsOfPages[index - 1].classList.add("active");
-      },
-      onLeave: function (index, nextIndex, direction) {
-        pointsOfPages[index - 1].classList.remove("active");
-        pointsOfPages[nextIndex - 1].classList.add("active");
-      },
-    });
-    $.fn.fullpage.setAllowScrolling(false);
-
     setTimeout(() => {
       body.classList.remove("welcome");
       body.classList.add("bg");
@@ -57,3 +43,17 @@ window.addEventListener("load", (event) => {
     }
   }
 });
+
+$("#fullpage").fullpage({
+  css3: true,
+  responsiveWidth: 1250,
+  fixedElements: mobileCondition ? "#header" : "",
+  afterLoad: function (anchorLink, index) {
+    pointsOfPages[index - 1].classList.add("active");
+  },
+  onLeave: function (index, nextIndex, direction) {
+    pointsOfPages[index - 1].classList.remove("active");
+    pointsOfPages[nextIndex - 1].classList.add("active");
+  },
+});
+$.fn.fullpage.setAllowScrolling(false);

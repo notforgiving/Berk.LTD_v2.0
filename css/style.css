@@ -92,11 +92,11 @@ body.bg .main_bg {
   transition: opacity 1s;
   opacity: 1;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 769px) {
   body.bg .main .vignette {
     transition: all 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-delay: 0s;
-    background-image: radial-gradient(circle closest-corner at center 195px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
+    background-image: radial-gradient(circle closest-corner at center 316px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
     opacity: 1;
   }
 }
@@ -106,11 +106,11 @@ body.overlay .main .vignette {
   background: radial-gradient(ellipse closest-corner at 50% 50%, rgba(0, 0, 0, 0) 36.3%, #08090c 71.7%);
   opacity: 1;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 769px) {
   body.overlay .main .vignette {
     transition: all 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-delay: 0s;
-    background-image: radial-gradient(circle closest-corner at center 195px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
+    background-image: radial-gradient(circle closest-corner at center 316px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
     opacity: 1;
   }
 }
@@ -898,7 +898,7 @@ section {
     letter-spacing: 0.6em;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 769px) {
   .main_title {
     font-size: 42px;
   }
@@ -964,6 +964,11 @@ section {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 769px) {
+  .advantages_container {
+    gap: 10px;
+  }
+}
 @media screen and (max-width: 600px) {
   .advantages_container {
     flex-direction: column;
@@ -1003,6 +1008,11 @@ section {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 600px) {
+  .map_content {
+    padding: 0 20px;
+  }
+}
 .map_title {
   font-family: var(--font-family);
   font-weight: 400;
@@ -1016,6 +1026,11 @@ section {
 .map_info {
   display: flex;
   gap: 100px;
+}
+@media screen and (max-width: 600px) {
+  .map_info {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 600px) {
   .map_info {
@@ -1051,7 +1066,7 @@ section {
   background-position: center;
   opacity: 1;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 769px) {
   .map .vignette {
     transition: none;
     background: radial-gradient(54.87% 50% at 50% 50%, rgba(12, 13, 17, 0) 0%, #08090c 100%);
@@ -1061,6 +1076,26 @@ section {
 
 .bdb {
   height: 100%;
+}
+@media screen and (max-width: 1250px) {
+  .bdb_container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+.bdb .vignette {
+  transition: none;
+  background: radial-gradient(54.87% 50% at 50% 50%, rgba(12, 13, 17, 0) 0%, #08090c 100%);
+  background-position: center;
+  opacity: 1;
+}
+@media screen and (max-width: 769px) {
+  .bdb .vignette {
+    transition: none;
+    background: radial-gradient(circle closest-corner at center 316px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
+    background-position: center;
+  }
 }
 .bdb_title {
   position: absolute;
@@ -1075,6 +1110,18 @@ section {
   width: 671px;
   margin: 0 auto;
 }
+@media screen and (max-width: 769px) {
+  .bdb_title {
+    top: 15%;
+    width: 309px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bdb_title {
+    top: 7%;
+    width: 309px;
+  }
+}
 .bdb_bg {
   position: absolute;
   left: 0;
@@ -1086,10 +1133,29 @@ section {
   height: 100%;
   opacity: 0.5;
 }
+@media screen and (max-width: 600px) {
+  .bdb_bg {
+    -o-object-position: top -266px right 60%;
+       object-position: top -266px right 60%;
+    object-view-box: inset(-50% -50% -50% -50%);
+  }
+}
 .bdb_content {
   position: relative;
   z-index: 4;
   top: 50%;
+}
+@media screen and (max-width: 1250px) {
+  .bdb_content {
+    top: 0;
+    transform: translateY(-10%);
+  }
+}
+@media screen and (max-width: 600px) {
+  .bdb_content {
+    transform: none;
+    margin-bottom: 20px;
+  }
 }
 .bdb_list {
   display: grid;
