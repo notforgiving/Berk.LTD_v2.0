@@ -425,7 +425,7 @@ section {
       font-size: 24px;
     }
 
-    @media screen and (orientation: landscape) {
+    @media screen and (max-height: 500px) and (orientation: landscape) {
       font-size: 38px;
       span {
         top: 30px;
@@ -491,7 +491,7 @@ section {
   opacity: 0;
   transform: translateY(100%);
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-height: 500px) and (orientation: landscape) {
     padding: 10px 0;
   }
 
@@ -526,7 +526,7 @@ section {
       color: #fff;
       max-width: 286px;
 
-      @media screen and (orientation: landscape) {
+      @media screen and (max-height: 500px) and (orientation: landscape) {
         font-size: 12px;
       }
     }
@@ -714,7 +714,7 @@ section {
       top: 10%;
     }
 
-    @media screen and (orientation: landscape) {
+    @media screen and (max-height: 500px) and (orientation: landscape) {
       max-width: 400px;
     }
 
