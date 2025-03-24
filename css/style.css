@@ -939,6 +939,14 @@ section:nth-child(2), section:nth-child(3) {
     font-size: 24px;
   }
 }
+@media screen and (orientation: landscape) {
+  .main_title {
+    font-size: 38px;
+  }
+  .main_title span {
+    top: 30px;
+  }
+}
 
 .header {
   align-self: baseline;
@@ -996,6 +1004,11 @@ section:nth-child(2), section:nth-child(3) {
   opacity: 0;
   transform: translateY(100%);
 }
+@media screen and (orientation: landscape) {
+  .advantages {
+    padding: 10px 0;
+  }
+}
 .advantages_container {
   display: flex;
   align-items: center;
@@ -1027,6 +1040,11 @@ section:nth-child(2), section:nth-child(3) {
   line-height: normal;
   color: #fff;
   max-width: 286px;
+}
+@media screen and (orientation: landscape) {
+  .advantages_item span {
+    font-size: 12px;
+  }
 }
 
 .map {
@@ -1180,6 +1198,11 @@ section:nth-child(2), section:nth-child(3) {
 @media screen and (max-width: 735px) {
   .bdb_title {
     top: 10%;
+  }
+}
+@media screen and (orientation: landscape) {
+  .bdb_title {
+    max-width: 400px;
   }
 }
 @media screen and (max-width: 600px) {

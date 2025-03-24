@@ -420,8 +420,16 @@ section {
     @include iphone {
       font-size: 42px;
     }
+
     @include phone {
       font-size: 24px;
+    }
+
+    @media screen and (orientation: landscape) {
+      font-size: 38px;
+      span {
+        top: 30px;
+      }
     }
   }
 }
@@ -483,6 +491,10 @@ section {
   opacity: 0;
   transform: translateY(100%);
 
+  @media screen and (orientation: landscape) {
+    padding: 10px 0;
+  }
+
   // .advantages_container
   &_container {
     display: flex;
@@ -513,6 +525,10 @@ section {
       line-height: normal;
       color: #fff;
       max-width: 286px;
+
+      @media screen and (orientation: landscape) {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -696,6 +712,10 @@ section {
 
     @media screen and (max-width: 735px) {
       top: 10%;
+    }
+
+    @media screen and (orientation: landscape) {
+      max-width: 400px;
     }
 
     // @include iphone {
