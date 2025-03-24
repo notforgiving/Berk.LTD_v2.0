@@ -10,6 +10,7 @@ document.querySelector(
 
 const body = document.querySelector("body");
 const SPEEDANIMATIONS = 1500;
+let stopScroll = true;
 
 setTimeout(() => {
   body.classList.add("welcome");
@@ -17,7 +18,31 @@ setTimeout(() => {
 
 const mobileCondition = document.body.clientWidth <= 1250;
 
+$("#fullpage").fullpage({
+  css3: true,
+  responsiveWidth: 1250,
+  fixedElements: mobileCondition ? "#header" : "",
+  afterLoad: function (anchorLink, index) {
+    pointsOfPages[index - 1].classList.add("active");
+  },
+  onLeave: function (index, nextIndex, direction) {
+    pointsOfPages[index - 1].classList.remove("active");
+    pointsOfPages[nextIndex - 1].classList.add("active");
+  },
+});
+$.fn.fullpage.setAllowScrolling(false);
+
+if(stopScroll) {
+  body.style.overflow='hidden';
+}
+
+
 window.addEventListener("load", (event) => {
+  stopScroll = false;
+  if(!stopScroll) {
+    body.style.overflow='hidden';
+  }
+
   if (videos[0]) {
     setTimeout(() => {
       body.classList.remove("welcome");
@@ -44,16 +69,3 @@ window.addEventListener("load", (event) => {
   }
 });
 
-$("#fullpage").fullpage({
-  css3: true,
-  responsiveWidth: 1250,
-  fixedElements: mobileCondition ? "#header" : "",
-  afterLoad: function (anchorLink, index) {
-    pointsOfPages[index - 1].classList.add("active");
-  },
-  onLeave: function (index, nextIndex, direction) {
-    pointsOfPages[index - 1].classList.remove("active");
-    pointsOfPages[nextIndex - 1].classList.add("active");
-  },
-});
-$.fn.fullpage.setAllowScrolling(false);
