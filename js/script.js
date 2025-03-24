@@ -62,9 +62,9 @@ window.addEventListener("load", (event) => {
       }
     }, SPEEDANIMATIONS * 5);
 
-    if (mobileCondition) {
-      videoBg.style.height = `${main_title.clientHeight}px`;
-    }
+    // if (mobileCondition) {
+    //   videoBg.style.height = `${main_title.clientHeight}px`;
+    // }
   }
 });
 

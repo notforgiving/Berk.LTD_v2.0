@@ -26,7 +26,7 @@
 @mixin vignettePhone {
   transition: all 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-delay: 0s;
-  background-image: radial-gradient(
+  background: radial-gradient(
     circle closest-corner at center 316px,
     rgba(0, 0, 0, 0) 0%,
     rgba(8, 9, 12, 1) 100%
@@ -160,6 +160,16 @@ body {
 
         @include iphone {
           @include vignettePhone;
+        }
+        @media screen and (max-width: 735px) {
+          background: radial-gradient(
+            circle closest-corner at center 50%,
+            rgba(0, 0, 0, 0) 45%,
+            #08090c 100%
+          );
+        }
+        @media screen and (max-width: 651px) {
+          background: radial-gradient(circle farthest-corner at center 0, rgba(255, 0, 0, 0) 66%, rgb(11 11 20 / 74%) 80%, #0c0b13 100%);
         }
       }
     }
@@ -326,9 +336,9 @@ section {
     height: 100%;
     opacity: 0;
 
-    @include phone {
-      height: 449px;
-    }
+    // @include phone {
+    //   height: 449px;
+    // }
   }
   // .main_content
   &_content {
@@ -374,6 +384,19 @@ section {
       height: auto;
       transform: none;
       letter-spacing: 0.6em;
+    }
+
+    @media screen and (max-width: 735px) {
+      span {
+        position: relative;
+        top: 10px;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      span {
+        top: 40px;
+      }
     }
 
     @include iphone {
@@ -573,6 +596,9 @@ section {
 
 .bdb {
   height: 100%;
+  @include tablet {
+    padding-top: 300px;
+  }
   @include phone {
     padding-top: 200px;
   }
@@ -593,9 +619,33 @@ section {
     );
     background-position: center;
     opacity: 1;
+
+    @include tablet {
+      background-image: radial-gradient(
+        circle farthest-corner at center 0,
+        rgba(255, 0, 0, 0) 52%,
+        rgb(8 9 12) 110%,
+        #08090c 100%
+      );
+    }
+
+    @media screen and (max-width: 650px) {
+      background-image: radial-gradient(
+        circle farthest-corner at center 0,
+        rgba(255, 0, 0, 0) 45%,
+        rgb(8 9 12) 105%,
+        #08090c 100%
+      );
+    }
+
     @include iphone {
       transition: none;
-      background-image: radial-gradient(circle farthest-corner at center 0, rgba(255, 0, 0, 0) 0%, rgb(8 9 12 / 93%) 110%, #08090c 100%);
+      background-image: radial-gradient(
+        circle farthest-corner at center 0,
+        rgba(255, 0, 0, 0) 0%,
+        rgb(8 9 12 / 93%) 110%,
+        #08090c 100%
+      );
     }
   }
   // .bdb_title
@@ -609,13 +659,23 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 671px;
+    max-width: 671px;
     margin: 0 auto;
 
-    @include iphone {
+    @include tablet {
       top: 15%;
-      width: 309px;
+      max-width: 584px;
+      padding: 0 20px;
     }
+
+    @media screen and (max-width: 735px) {
+      top: 10%;
+    }
+
+    // @include iphone {
+    //   top: 15%;
+    //   width: 309px;
+    // }
 
     @include phone {
       top: 7%;
@@ -632,6 +692,14 @@ section {
     width: 100%;
     height: 100%;
     opacity: 0.5;
+
+    @include tablet {
+      object-position: top 0 right 60%;
+    }
+
+    @media screen and (max-width: 735px) {
+      object-position: top -174px right 60%;
+    }
 
     @include phone {
       object-position: top -308px right 60%;
