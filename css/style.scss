@@ -142,22 +142,6 @@ body {
         @include iphone {
           @include vignettePhone;
         }
-      }
-    }
-  }
-
-  &.overlay {
-    .main {
-      .vignette {
-        transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transition-delay: 0.5s;
-        background: radial-gradient(
-          ellipse closest-corner at 50% 50%,
-          rgba(0, 0, 0, 0) 36.3%,
-          #08090c 71.7%
-        );
-        opacity: 1;
-
         @include iphone {
           @include vignettePhone;
         }
@@ -176,6 +160,29 @@ body {
             #0c0b13 100%
           );
         }
+        @include phone {
+          background: radial-gradient(
+            circle farthest-corner at center 0,
+            rgb(255 0 239 / 0%) 50%,
+            rgb(9 9 17) 68%,
+            #090910 100%
+          );
+        }
+      }
+    }
+  }
+
+  &.overlay {
+    .main {
+      .vignette {
+        transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-delay: 0.5s;
+        background: radial-gradient(
+          ellipse closest-corner at 50% 50%,
+          rgba(0, 0, 0, 0) 36.3%,
+          #08090c 71.7%
+        );
+        opacity: 1;
       }
     }
   }
@@ -346,9 +353,10 @@ section {
     height: 100%;
     opacity: 0;
 
-    // @include phone {
-    //   height: 449px;
-    // }
+    @include phone {
+      object-view-box: inset(-10% -10% -10% -10%);
+      object-position: top -75px right 50%;
+    }
   }
   // .main_content
   &_content {
@@ -460,6 +468,11 @@ section {
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
+
+    @include phone {
+      text-align: right;
+      font-size: 12px;
+    }
   }
 }
 
@@ -536,6 +549,10 @@ section {
     text-align: center;
     color: #fff;
     margin-bottom: 40px;
+
+    @include phone {
+      font-size: 22px;
+    }
   }
   // .map_info
   &_info {
@@ -593,7 +610,6 @@ section {
     opacity: 1;
 
     @include iphone {
-      transition: none;
       background: radial-gradient(
         54.87% 50% at 50% 50%,
         rgba(12, 13, 17, 0) 0%,

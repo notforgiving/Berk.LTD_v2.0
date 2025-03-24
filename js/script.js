@@ -51,7 +51,10 @@ window.addEventListener("load", (event) => {
     }, SPEEDANIMATIONS * 2);
 
     setTimeout(() => {
-      body.classList.add("overlay");
+      if (!mobileCondition) {
+        body.classList.add("overlay");
+      }
+
       body.classList.add("title");
     }, SPEEDANIMATIONS * 3);
 
