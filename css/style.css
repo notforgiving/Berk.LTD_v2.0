@@ -1098,9 +1098,7 @@ section {
 @media screen and (max-width: 769px) {
   .bdb .vignette {
     transition: none;
-    background: radial-gradient(circle closest-corner at center 316px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
-    background-position: center;
-    display: none;
+    background-image: radial-gradient(circle farthest-corner at center 0, rgba(255, 0, 0, 0) 0%, rgba(8, 9, 12, 0.93) 110%, #08090c 100%);
   }
 }
 .bdb_title {
