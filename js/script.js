@@ -40,9 +40,6 @@ if(stopScroll) {
 window.addEventListener("load", (event) => {
   if (videos[0]) {
     stopScroll = false;
-    if(!stopScroll) {
-      body.style.overflow='initial';
-    }
 
     setTimeout(() => {
       body.classList.remove("welcome");
@@ -61,6 +58,9 @@ window.addEventListener("load", (event) => {
 
     setTimeout(() => {
       $.fn.fullpage.setAllowScrolling(true);
+      if(!stopScroll) {
+        body.style.overflow='initial';
+      }
     }, SPEEDANIMATIONS * 5);
 
     if (mobileCondition) {
