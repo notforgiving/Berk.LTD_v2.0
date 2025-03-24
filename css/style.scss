@@ -169,7 +169,12 @@ body {
           );
         }
         @media screen and (max-width: 651px) {
-          background: radial-gradient(circle farthest-corner at center 0, rgba(255, 0, 0, 0) 66%, rgb(11 11 20 / 74%) 80%, #0c0b13 100%);
+          background: radial-gradient(
+            circle farthest-corner at center 0,
+            rgba(255, 0, 0, 0) 66%,
+            rgb(11 11 20 / 74%) 80%,
+            #0c0b13 100%
+          );
         }
       }
     }
@@ -195,6 +200,11 @@ body {
 
 section {
   height: 100vh;
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    display: none;
+  }
 }
 
 .container {

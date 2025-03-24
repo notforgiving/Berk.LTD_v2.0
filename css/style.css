@@ -141,6 +141,9 @@ body.title .pages {
 section {
   height: 100vh;
 }
+section:nth-child(2), section:nth-child(3) {
+  display: none;
+}
 
 .container {
   max-width: 1200px;
