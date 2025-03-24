@@ -38,12 +38,12 @@ if(stopScroll) {
 
 
 window.addEventListener("load", (event) => {
-  stopScroll = false;
-  if(!stopScroll) {
-    body.style.overflow='hidden';
-  }
-
   if (videos[0]) {
+    stopScroll = false;
+    if(!stopScroll) {
+      body.style.overflow='initial';
+    }
+
     setTimeout(() => {
       body.classList.remove("welcome");
       body.classList.add("bg");
