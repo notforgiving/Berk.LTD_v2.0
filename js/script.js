@@ -32,10 +32,9 @@ $("#fullpage").fullpage({
 });
 $.fn.fullpage.setAllowScrolling(false);
 
-if(stopScroll) {
-  body.style.overflow='hidden';
+if (stopScroll) {
+  body.style.overflow = "hidden";
 }
-
 
 window.addEventListener("load", (event) => {
   if (videos[0]) {
@@ -58,8 +57,8 @@ window.addEventListener("load", (event) => {
 
     setTimeout(() => {
       $.fn.fullpage.setAllowScrolling(true);
-      if(!stopScroll) {
-        body.style.overflow='initial';
+      if (!stopScroll) {
+        body.style.overflow = "initial";
       }
     }, SPEEDANIMATIONS * 5);
 
@@ -69,3 +68,11 @@ window.addEventListener("load", (event) => {
   }
 });
 
+const setAutoHeightForBDB = () => {
+  const sectionBdb = document.querySelector("#bdb");
+  if (mobileCondition && sectionBdb) {
+    sectionBdb.classList.add("fp-auto-height-responsive");
+  }
+};
+
+setAutoHeightForBDB();

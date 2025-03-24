@@ -573,6 +573,9 @@ section {
 
 .bdb {
   height: 100%;
+  @include phone {
+    padding-top: 200px;
+  }
   // .bdb_container
   &_container {
     @include tablet {
@@ -594,6 +597,7 @@ section {
       transition: none;
       background: radial-gradient(circle closest-corner at center 316px, rgba(0, 0, 0, 0) 0%, rgb(8, 9, 12) 100%);
       background-position: center;
+      display: none;
     }
   }
   // .bdb_title
@@ -632,7 +636,7 @@ section {
     opacity: 0.5;
 
     @include phone {
-      object-position: top -266px right 60%;
+      object-position: top -308px right 60%;
       object-view-box: inset(-50% -50% -50% -50%);
     }
   }
@@ -662,6 +666,9 @@ section {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    @include phone {
+      gap: 30px;
     }
   }
   // .bdb_item
