@@ -4,9 +4,9 @@ const videoBg = document.querySelector("video");
 const main_title = document.querySelector(".main_title");
 const videos = document.querySelectorAll("video");
 
-document.querySelector(
-  "#size"
-).innerHTML = `${document.body.clientWidth}x${window.innerHeight}`;
+// document.querySelector(
+//   "#size"
+// ).innerHTML = `${document.body.clientWidth}x${window.innerHeight}`;
 
 const body = document.querySelector("body");
 const SPEEDANIMATIONS = 1500;
